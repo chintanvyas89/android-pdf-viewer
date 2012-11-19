@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+<!-- #ifdef lite -->
+<string name="app_name">APV PDF Viewer</string>
+<!--  #endif -->
+
+<!-- #ifdef pro -->
+<!-- <string name="app_name">APV PDF Viewer Pro</string> -->
+<!--  #endif -->
+
+	<string name="about">A propos</string>
+	<string name="goto_page">Aller à la page…</string>
+	<string name="goto_page_dialog_title">Aller à la page</string>
+	<string name="goto_page_go_button">Aller</string>
+	<string name="rotate_page_left">Rotation gauche</string>
+	<string name="rotate_page_right">Rotation droite</string>
+	<string name="find_text">Chercher…</string>
+	<string name="find_dialog_title">Recherche texte</string>
+	<string name="find_go_button">Chercher</string>
+	<string name="find_cancel_button">Annuler</string>
+	<string name="clear_find_text">Annuler recherche</string>
+	<string name="cancel">Annuler</string>
+	<string name="searching_for">Recherche de "%1$s"</string>
+	<string name="page_of">Page %1$d sur %2$d</string>
+	<string name="page">Page</string>
+</resources>

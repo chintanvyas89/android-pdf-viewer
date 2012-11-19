@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+        package="cx.hell.android.pdfview"
+        android:installLocation="auto" android:versionCode="33040" android:versionName="0.3.4dev04"
+        >
+        
+    <!--
+        version code:
+        xyz00E for x.y.z           : 5.4.3      becomes 54300E
+        xyzDDE for x.y.(z+1)devDD  : 5.4.4dev05 becomes 54305E
+        
+        where E is eabi version:
+
+         - armeabi and armeabi-v7a is 0
+         - armeabi is 1
+         - armeabi-v7a is 2
+         - intel is 3
+         
+        this way armeabi-v7a will be choosen for devices supporting
+        armeabi and armeabi-v7a architectures
+
+        version code scheme will probably be revised to better fit what's described here:
+        <http://developer.android.com/guide/market/publishing/multiple-apks.html#VersionCodes>
+        
+    -->
+
+
+    <!-- 3 is 1.5 or later, that's more than 99% of devices -->
+	<uses-sdk android:minSdkVersion="3" android:targetSdkVersion="10" android:maxSdkVersion="16"/>
+
+	<supports-screens
+            android:smallScreens="true"
+            android:normalScreens="true"
+            android:largeScreens="true"
+            android:anyDensity="true"/>
+	
+	
+
+	<application android:icon="@drawable/pdfviewer"
+            android:label="@string/app_name"
+            android:allowBackup="true">
+
+		<activity android:name=".ChooseFileActivity" android:label="@string/app_name">
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN" />
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+		</activity>
+
+		<activity android:name=".OpenFileActivity" android:label="@string/app_name"
+			android:configChanges="orientation|keyboardHidden">
+			<intent-filter>
+				<action android:name="android.intent.action.VIEW"></action>
+				<category android:name="android.intent.category.DEFAULT"></category>
+				<category android:name="android.intent.category.BROWSABLE"></category>
+				<data android:mimeType="application/pdf" android:scheme="file"></data>
+			</intent-filter>
+			<intent-filter>
+				<action android:name="android.intent.action.VIEW"></action>
+				<category android:name="android.intent.category.DEFAULT"></category>
+				<category android:name="android.intent.category.BROWSABLE"></category>
+				<data android:mimeType="application/pdf" android:scheme="content"></data>
+			</intent-filter>
+			<intent-filter>
+				<action android:name="android.intent.action.VIEW"></action>
+				<category android:name="android.intent.category.DEFAULT"></category>
+				<category android:name="android.intent.category.BROWSABLE"></category>
+				<data android:host="*" android:scheme="file"
+					android:pathPattern=".*\.[pP][dD][fF]" />
+			</intent-filter>
+		</activity>
+
+		<activity android:name=".AboutPDFViewActivity" android:label="@string/app_name" />
+		<activity android:name=".Options" android:label="@string/options" />
+
+	</application>
+
+</manifest>
